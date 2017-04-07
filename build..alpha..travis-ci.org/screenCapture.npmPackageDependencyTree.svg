@@ -1,0 +1,103 @@
+<svg height="1598" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="1598" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26">7 megabytes installed</tspan>
+<tspan x="10" y="42"></tspan>
+<tspan x="10" y="58">node_modules</tspan>
+<tspan x="10" y="74">└─┬ torrent-stream@1.0.3 </tspan>
+<tspan x="10" y="90">  ├── bitfield@0.1.0 </tspan>
+<tspan x="10" y="106">  ├── bncode@0.5.3 </tspan>
+<tspan x="10" y="122">  ├─┬ end-of-stream@0.1.5 </tspan>
+<tspan x="10" y="138">  │ └─┬ once@1.3.3 </tspan>
+<tspan x="10" y="154">  │   └── wrappy@1.0.2 </tspan>
+<tspan x="10" y="170">  ├─┬ fs-chunk-store@1.6.5 </tspan>
+<tspan x="10" y="186">  │ ├─┬ mkdirp@0.5.1 </tspan>
+<tspan x="10" y="202">  │ │ └── minimist@0.0.8 </tspan>
+<tspan x="10" y="218">  │ ├─┬ random-access-file@1.5.0 </tspan>
+<tspan x="10" y="234">  │ │ └── mkdirp@0.5.1 </tspan>
+<tspan x="10" y="250">  │ ├── randombytes@2.0.3 </tspan>
+<tspan x="10" y="266">  │ ├── run-parallel@1.1.6 </tspan>
+<tspan x="10" y="282">  │ └── thunky@1.0.2 </tspan>
+<tspan x="10" y="298">  ├── hat@0.0.3 </tspan>
+<tspan x="10" y="314">  ├── immediate-chunk-store@1.0.8 </tspan>
+<tspan x="10" y="330">  ├─┬ ip-set@1.0.1 </tspan>
+<tspan x="10" y="346">  │ └── ip@1.1.5 </tspan>
+<tspan x="10" y="362">  ├── mkdirp@0.3.5 </tspan>
+<tspan x="10" y="378">  ├─┬ parse-torrent@4.1.0 </tspan>
+<tspan x="10" y="394">  │ ├─┬ magnet-uri@4.2.3 </tspan>
+<tspan x="10" y="410">  │ │ ├── flatten@0.0.1 </tspan>
+<tspan x="10" y="426">  │ │ └── thirty-two@0.0.2 </tspan>
+<tspan x="10" y="442">  │ └─┬ parse-torrent-file@2.1.4 </tspan>
+<tspan x="10" y="458">  │   ├── bencode@0.7.0 </tspan>
+<tspan x="10" y="474">  │   └─┬ simple-sha1@2.1.0 </tspan>
+<tspan x="10" y="490">  │     └── rusha@0.8.5 </tspan>
+<tspan x="10" y="506">  ├─┬ peer-wire-swarm@0.12.1 </tspan>
+<tspan x="10" y="522">  │ ├── fifo@0.1.4 </tspan>
+<tspan x="10" y="538">  │ ├─┬ peer-wire-protocol@0.7.0 </tspan>
+<tspan x="10" y="554">  │ │ ├── bncode@0.2.3 </tspan>
+<tspan x="10" y="570">  │ │ └─┬ readable-stream@1.1.14 </tspan>
+<tspan x="10" y="586">  │ │   ├── core-util-is@1.0.2 </tspan>
+<tspan x="10" y="602">  │ │   ├── isarray@0.0.1 </tspan>
+<tspan x="10" y="618">  │ │   └── string_decoder@0.10.31 </tspan>
+<tspan x="10" y="634">  │ ├── speedometer@0.1.4 </tspan>
+<tspan x="10" y="650">  │ └─┬ utp@0.0.7 </tspan>
+<tspan x="10" y="666">  │   └── cyclist@0.1.1 </tspan>
+<tspan x="10" y="682">  ├─┬ rimraf@2.6.1 </tspan>
+<tspan x="10" y="698">  │ └─┬ glob@7.1.1 </tspan>
+<tspan x="10" y="714">  │   ├── fs.realpath@1.0.0 </tspan>
+<tspan x="10" y="730">  │   ├── inflight@1.0.6 </tspan>
+<tspan x="10" y="746">  │   ├─┬ minimatch@3.0.3 </tspan>
+<tspan x="10" y="762">  │   │ └─┬ brace-expansion@1.1.7 </tspan>
+<tspan x="10" y="778">  │   │   ├── balanced-match@0.4.2 </tspan>
+<tspan x="10" y="794">  │   │   └── concat-map@0.0.1 </tspan>
+<tspan x="10" y="810">  │   └── path-is-absolute@1.0.1 </tspan>
+<tspan x="10" y="826">  ├─┬ torrent-discovery@5.4.0 </tspan>
+<tspan x="10" y="842">  │ ├─┬ bittorrent-dht@6.4.2 </tspan>
+<tspan x="10" y="858">  │ │ ├── buffer-equals@1.0.4 </tspan>
+<tspan x="10" y="874">  │ │ ├─┬ k-bucket@0.6.0 </tspan>
+<tspan x="10" y="890">  │ │ │ └── buffer-equal@0.0.1 </tspan>
+<tspan x="10" y="906">  │ │ ├─┬ k-rpc@3.7.0 </tspan>
+<tspan x="10" y="922">  │ │ │ ├── k-bucket@2.0.1 </tspan>
+<tspan x="10" y="938">  │ │ │ └─┬ k-rpc-socket@1.6.2 </tspan>
+<tspan x="10" y="954">  │ │ │   └── bencode@0.11.0 </tspan>
+<tspan x="10" y="970">  │ │ └── lru@2.0.1 </tspan>
+<tspan x="10" y="986">  │ ├─┬ bittorrent-tracker@7.7.0 </tspan>
+<tspan x="10" y="1002">  │ │ ├── bencode@0.8.0 </tspan>
+<tspan x="10" y="1018">  │ │ ├── bn.js@4.11.6 </tspan>
+<tspan x="10" y="1034">  │ │ ├─┬ compact2string@1.4.0 </tspan>
+<tspan x="10" y="1050">  │ │ │ └── ipaddr.js@1.3.0 </tspan>
+<tspan x="10" y="1066">  │ │ ├── minimist@1.2.0 </tspan>
+<tspan x="10" y="1082">  │ │ ├── random-iterate@1.0.1 </tspan>
+<tspan x="10" y="1098">  │ │ ├── run-series@1.1.4 </tspan>
+<tspan x="10" y="1114">  │ │ ├─┬ simple-get@2.4.0 </tspan>
+<tspan x="10" y="1130">  │ │ │ ├── simple-concat@1.0.0 </tspan>
+<tspan x="10" y="1146">  │ │ │ └── unzip-response@2.0.1 </tspan>
+<tspan x="10" y="1162">  │ │ ├─┬ simple-peer@6.4.4 </tspan>
+<tspan x="10" y="1178">  │ │ │ ├── get-browser-rtc@1.0.2 </tspan>
+<tspan x="10" y="1194">  │ │ │ └─┬ readable-stream@2.2.7 </tspan>
+<tspan x="10" y="1210">  │ │ │   ├── buffer-shims@1.0.0 </tspan>
+<tspan x="10" y="1226">  │ │ │   ├── isarray@1.0.0 </tspan>
+<tspan x="10" y="1242">  │ │ │   ├── process-nextick-args@1.0.7 </tspan>
+<tspan x="10" y="1258">  │ │ │   ├── string_decoder@1.0.0 </tspan>
+<tspan x="10" y="1274">  │ │ │   └── util-deprecate@1.0.2 </tspan>
+<tspan x="10" y="1290">  │ │ ├─┬ simple-websocket@4.3.1 </tspan>
+<tspan x="10" y="1306">  │ │ │ ├─┬ readable-stream@2.2.7 </tspan>
+<tspan x="10" y="1322">  │ │ │ │ ├── isarray@1.0.0 </tspan>
+<tspan x="10" y="1338">  │ │ │ │ └── string_decoder@1.0.0 </tspan>
+<tspan x="10" y="1354">  │ │ │ └─┬ ws@2.2.3 </tspan>
+<tspan x="10" y="1370">  │ │ │   ├── safe-buffer@5.0.1 </tspan>
+<tspan x="10" y="1386">  │ │ │   └── ultron@1.1.0 </tspan>
+<tspan x="10" y="1402">  │ │ ├─┬ string2compact@1.2.2 </tspan>
+<tspan x="10" y="1418">  │ │ │ └── addr-to-ip-port@1.4.2 </tspan>
+<tspan x="10" y="1434">  │ │ ├── uniq@1.0.1 </tspan>
+<tspan x="10" y="1450">  │ │ └─┬ ws@1.1.4 </tspan>
+<tspan x="10" y="1466">  │ │   ├── options@0.0.6 </tspan>
+<tspan x="10" y="1482">  │ │   └── ultron@1.0.2 </tspan>
+<tspan x="10" y="1498">  │ ├─┬ debug@2.6.3 </tspan>
+<tspan x="10" y="1514">  │ │ └── ms@0.7.2 </tspan>
+<tspan x="10" y="1530">  │ ├── inherits@2.0.3 </tspan>
+<tspan x="10" y="1546">  │ ├── re-emitter@1.1.3 </tspan>
+<tspan x="10" y="1562">  │ └── xtend@4.0.1 </tspan>
+<tspan x="10" y="1578">  └── torrent-piece@1.1.0</tspan>
+</text>
+</svg>

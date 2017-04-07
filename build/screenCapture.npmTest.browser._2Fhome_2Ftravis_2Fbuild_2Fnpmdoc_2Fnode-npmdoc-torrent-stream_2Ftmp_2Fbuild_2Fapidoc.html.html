@@ -1,0 +1,359 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/mafintosh/torrent-stream">torrent-stream (v1.0.3)</a>
+</h1>
+<h4>Low level streaming torrent client that exposes files as node.js streams and downloads pieces based on demand</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.torrent-stream">module torrent-stream</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.torrent-stream.file_stream">
+            function <span class="apidocSignatureSpan">torrent-stream.</span>file_stream
+            <span class="apidocSignatureSpan">(engine, file, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">torrent-stream.</span>file_stream.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.torrent-stream.file_stream">module torrent-stream.file_stream</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.torrent-stream.file_stream.file_stream">
+            function <span class="apidocSignatureSpan">torrent-stream.</span>file_stream
+            <span class="apidocSignatureSpan">(engine, file, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.torrent-stream.file_stream.super_">
+            function <span class="apidocSignatureSpan">torrent-stream.file_stream.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.torrent-stream.file_stream.prototype">module torrent-stream.file_stream.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.torrent-stream.file_stream.prototype._read">
+            function <span class="apidocSignatureSpan">torrent-stream.file_stream.prototype.</span>_read
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.torrent-stream.file_stream.prototype.destroy">
+            function <span class="apidocSignatureSpan">torrent-stream.file_stream.prototype.</span>destroy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.torrent-stream.file_stream.prototype.notify">
+            function <span class="apidocSignatureSpan">torrent-stream.file_stream.prototype.</span>notify
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.torrent-stream" id="apidoc.module.torrent-stream">module torrent-stream</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.torrent-stream.file_stream" id="apidoc.element.torrent-stream.file_stream">
+        function <span class="apidocSignatureSpan">torrent-stream.</span>file_stream
+        <span class="apidocSignatureSpan">(engine, file, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">file_stream = function (engine, file, opts) {
+  if (!(this instanceof FileStream)) return new FileStream(engine, file, opts)
+  stream.Readable.call(this)
+
+  if (!opts) opts = {}
+  if (!opts.start) opts.start = 0
+  if (!opts.end &amp;&amp; typeof opts.end !== 'number') opts.end = file.length - 1
+
+  var offset = opts.start + file.offset
+  var pieceLength = engine.torrent.pieceLength
+
+  this.length = opts.end - opts.start + 1
+  this.startPiece = (offset / pieceLength) | 0
+  this.endPiece = ((opts.end + file.offset) / pieceLength) | 0
+  this._destroyed = false
+  this._engine = engine
+  this._piece = this.startPiece
+  this._missing = this.length
+  this._reading = false
+  this._notifying = false
+  this._critical = Math.min(1024 * 1024 / pieceLength, 2) | 0
+  this._offset = offset - this.startPiece * pieceLength
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.torrent-stream.file_stream" id="apidoc.module.torrent-stream.file_stream">module torrent-stream.file_stream</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.torrent-stream.file_stream.file_stream" id="apidoc.element.torrent-stream.file_stream.file_stream">
+        function <span class="apidocSignatureSpan">torrent-stream.</span>file_stream
+        <span class="apidocSignatureSpan">(engine, file, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">file_stream = function (engine, file, opts) {
+  if (!(this instanceof FileStream)) return new FileStream(engine, file, opts)
+  stream.Readable.call(this)
+
+  if (!opts) opts = {}
+  if (!opts.start) opts.start = 0
+  if (!opts.end &amp;&amp; typeof opts.end !== 'number') opts.end = file.length - 1
+
+  var offset = opts.start + file.offset
+  var pieceLength = engine.torrent.pieceLength
+
+  this.length = opts.end - opts.start + 1
+  this.startPiece = (offset / pieceLength) | 0
+  this.endPiece = ((opts.end + file.offset) / pieceLength) | 0
+  this._destroyed = false
+  this._engine = engine
+  this._piece = this.startPiece
+  this._missing = this.length
+  this._reading = false
+  this._notifying = false
+  this._critical = Math.min(1024 * 1024 / pieceLength, 2) | 0
+  this._offset = offset - this.startPiece * pieceLength
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.torrent-stream.file_stream.super_" id="apidoc.element.torrent-stream.file_stream.super_">
+        function <span class="apidocSignatureSpan">torrent-stream.file_stream.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Readable(options) {
+  if (!(this instanceof Readable))
+    return new Readable(options);
+
+  this._readableState = new ReadableState(options, this);
+
+  // legacy
+  this.readable = true;
+
+  if (options &amp;&amp; typeof options.read === 'function')
+    this._read = options.read;
+
+  Stream.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.torrent-stream.file_stream.prototype" id="apidoc.module.torrent-stream.file_stream.prototype">module torrent-stream.file_stream.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.torrent-stream.file_stream.prototype._read" id="apidoc.element.torrent-stream.file_stream.prototype._read">
+        function <span class="apidocSignatureSpan">torrent-stream.file_stream.prototype.</span>_read
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_read = function () {
+  if (this._reading) return
+  this._reading = true
+  this.notify()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.torrent-stream.file_stream.prototype.destroy" id="apidoc.element.torrent-stream.file_stream.prototype.destroy">
+        function <span class="apidocSignatureSpan">torrent-stream.file_stream.prototype.</span>destroy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function () {
+  if (this._destroyed) return
+  this._destroyed = true
+  this.emit('close')
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Emitted when all selected files have been completely downloaded.
+
+#### `engine.files[...]`
+
+An array of all files in the torrent. See the file section for more info on what methods the file has
+
+#### `engine.<span class="apidocCodeKeywordSpan">destroy</span>(cb)`
+
+Destroy the engine. Destroys all connections to peers
+
+#### `engine.connect('127.0.0.0:6881')`
+
+Connect to a peer manually
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.torrent-stream.file_stream.prototype.notify" id="apidoc.element.torrent-stream.file_stream.prototype.notify">
+        function <span class="apidocSignatureSpan">torrent-stream.file_stream.prototype.</span>notify
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notify = function () {
+  if (!this._reading || !this._missing) return
+  if (!this._engine.bitfield.get(this._piece)) return this._engine.critical(this._piece, this._critical)
+
+  var self = this
+
+  if (this._notifying) return
+  this._notifying = true
+  this._engine.store.get(this._piece++, function (err, buffer) {
+    self._notifying = false
+
+    if (self._destroyed || !self._reading) return
+
+    if (err) return self.destroy(err)
+
+    if (self._offset) {
+      buffer = buffer.slice(self._offset)
+      self._offset = 0
+    }
+
+    if (self._missing &lt; buffer.length) buffer = buffer.slice(0, self._missing)
+
+    self._missing -= buffer.length
+
+    if (!self._missing) {
+      self.push(buffer)
+      self.push(null)
+      return
+    }
+
+    self._reading = false
+    self.push(buffer)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var gc = function () {
+      for (var i = 0; i &lt; engine.selection.length; i++) {
+var s = engine.selection[i]
+var oldOffset = s.offset
+
+while (!pieces[s.from + s.offset] &amp;&amp; s.from + s.offset &lt; s.to) s.offset++
+
+if (oldOffset !== s.offset) s.<span class="apidocCodeKeywordSpan">notify</span>()
+if (s.to !== s.from + s.offset) continue
+if (pieces[s.from + s.offset]) continue
+
+engine.selection.splice(i, 1)
+i-- // -1 to offset splice
+s.notify()
+oninterestchange()
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
